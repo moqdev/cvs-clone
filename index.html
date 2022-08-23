@@ -15,10 +15,9 @@
   <title>TVS Pharmacy</title>
 </head>
 <body>
-  <!-- <div class="splash">
-    <img src="images/logo.png" alt="" class="logo">
-  </div> -->
-
+  <div id="splash">
+    <img class="logo" src="images/logo.png" alt="">
+  </div>
   <div class="content">
     <header class="app-header">
       <div class="container">
@@ -38,7 +37,7 @@
     <div class="grid container">
       <div class="item">
         <h4>Pharmacy</h4>
-        <p class="desc">2Rxs ready to refill</p>
+        <p class="desc">2Rxs ready for refill</p>
         <img src="images/medicine.png" alt="">
       </div>
       <div class="item">
@@ -88,5 +87,11 @@
       </li>
     </ul>
   </footer>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById('splash').classList.add('fade');
+    }, 2000);
+  </script>
 </body>
 </html>

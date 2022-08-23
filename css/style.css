@@ -3,15 +3,27 @@
   --secondary-color: #7c0000;
 }
 
+html,
+body {
+  /* https://css-tricks.com/couple-takes-sticky-footer/ */
+  height: 100%;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html,
 body {
   font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* For sticky footer - grow to fill the space */
+.content {
+  flex: 1 0 auto;
 }
 
 .container {
@@ -97,3 +109,64 @@ body {
   width: 30px;
   align-self: flex-end;
 } 
+
+.app-footer {
+  flex-shrink: 0;
+  background: #f4f4f4;
+  color: #444;
+  padding: 10px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.app-footer ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.app-footer ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app-footer ul li i {
+  font-size: 22px;
+}
+
+/* Splash */
+#splash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--primary-color);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 1s;
+}
+
+#splash img {
+  width: 300px;
+}
+
+#splash.fade {
+  opacity: 0;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid .item img {
+    width: 60px;
+  }
+}
